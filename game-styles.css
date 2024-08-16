@@ -1,0 +1,47 @@
+body {
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.main {
+  width: 90rem;
+  height: 50rem;
+
+  border: solid rgb(92, 92, 92) 2px;
+  background-color: white;
+}
+
+.top-row {
+  height: 10%;
+}
+
+.mid-row {
+  height: 65%;
+}
+
+.bot-row {
+  height: 25%;
+}
+
+.top-bar {
+  background-color: rgb(202, 255, 237);
+}
+
+.player-field {
+  background-color: rgb(187, 252, 181);
+}
+
+.enemy-field {
+  background-color: rgb(248, 217, 215);
+}
+
+.menu-bar {
+  background-color: rgb(251, 233, 252);
+}
+
+.info-bar {
+  background-color: rgb(247, 248, 198);
+}
