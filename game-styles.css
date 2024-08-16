@@ -8,7 +8,7 @@ body {
 
 .main {
   width: 90rem;
-  height: 50rem;
+  height: 60rem;
 
   border: solid rgb(92, 92, 92) 2px;
   background-color: white;
@@ -37,35 +37,52 @@ body {
 
 .player-field-lower {
   margin: 0;
-  margin-top: 1rem;
-  border: solid black 2px;
-  width: 90%;
-  height: 90%;
+
+  width: 100%;
+  height: 95%;
+  margin-bottom: 1rem;
 }
 
 .champion-row {
   width: 100%;
   height: 30%;
   margin-top: 0.7rem;
-  border: solid red 2px;
+  border: solid rgb(0, 0, 0) 1px;
+  padding: 5px;
 }
 
 .image-row {
-  height: 70%;
+  height: 8.4rem;
 }
 
 .resource-row {
-  height: 30%;
+  height: 20%;
 }
 
 .image-col {
-  border: solid 2px rgb(244, 127, 255);
+  overflow: hidden;
+  padding: 0;
   margin-right: 1rem;
 }
 
 .resource-col {
-  border: solid 2px blueviolet;
+  /* border: solid 1px rgb(141, 114, 167); */
   margin-right: 1rem;
+}
+
+.img-avatar {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: solid 1px rgb(0, 0, 0);
+}
+
+.img-skill {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 0.5rem;
+  border: solid 1px rgb(0, 0, 0);
 }
 
 /* Enemy Field */
