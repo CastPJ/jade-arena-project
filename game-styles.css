@@ -26,8 +26,31 @@ body {
   height: 25%;
 }
 
+/* Top bar */
+
 .top-bar {
-  background-color: rgb(202, 255, 237);
+  border: 2px solid black;
+}
+
+.energy-container {
+  height: 3.5rem;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.energy {
+  background-color: aquamarine;
+  height: 2rem;
+  width: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.energy-qty-row {
+  text-align: center;
 }
 
 /* Player Field */
