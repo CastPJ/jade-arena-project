@@ -213,5 +213,30 @@ body {
 /* Info bar */
 
 .info-bar {
-  background-color: rgb(247, 248, 198);
+  border: 1px solid black;
+}
+
+.info-img {
+  padding: 0.5rem;
+  width: 12rem;
+  height: 12rem;
+}
+
+.info-add {
+  width: 12rem;
+}
+
+.info-cooldown {
+  text-align: end;
+}
+
+.skill-short-description {
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.skill-long-description {
+  margin-top: 0.5rem;
+  margin-right: 1rem;
 }
