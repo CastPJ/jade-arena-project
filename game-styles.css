@@ -90,6 +90,20 @@ body {
   margin-bottom: 0.4rem;
 }
 
+.logo-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.game-name {
+  color: rgba(99, 181, 166, 255);
+  text-shadow: -1px 1px 1px rgb(0, 201, 134), 1px 1px 1px rgb(0, 201, 134),
+    1px -1px 1px rgb(0, 201, 134), -1px -1px 1px rgb(0, 201, 134);
+  font-style: italic;
+}
+
 /* Player Field */
 
 .player-field-lower {
