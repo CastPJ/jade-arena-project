@@ -99,7 +99,7 @@ body {
 }
 
 .game-name {
-  color: rgba(99, 181, 166, 255);
+  color: rgba(99, 181, 166);
   text-shadow: -1px 1px 1px rgb(0, 201, 134), 1px 1px 1px rgb(0, 201, 134),
     1px -1px 1px rgb(0, 201, 134), -1px -1px 1px rgb(0, 201, 134);
   font-style: italic;
@@ -189,7 +189,25 @@ body {
 /* Menu bar */
 
 .menu-bar {
-  background-color: rgb(251, 233, 252);
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-top: 0.5rem;
+}
+
+.btn-default {
+  background-color: rgba(99, 181, 166);
+  color: white;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: -1px 1px 2px rgb(0, 201, 134), 1px 1px 2px rgb(0, 201, 134),
+    1px -1px 2px rgb(0, 201, 134), -1px -1px 2px rgb(0, 201, 134);
+}
+
+.btn-default:hover {
+  background-color: rgb(170, 216, 208);
 }
 
 /* Info bar */
