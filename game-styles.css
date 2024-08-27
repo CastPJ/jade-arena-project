@@ -230,6 +230,13 @@ body {
   text-align: end;
 }
 
+.skill-name {
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
 .skill-short-description {
   margin-top: 0.5rem;
   margin-right: 1rem;
@@ -239,4 +246,29 @@ body {
 .skill-long-description {
   margin-top: 0.5rem;
   margin-right: 1rem;
+}
+
+.info-image-row {
+  margin-left: 0rem;
+  margin-top: 0.5rem;
+}
+
+.info-img-avatar {
+  width: 100%;
+}
+
+.info-name-row {
+  height: 30%;
+}
+
+.info-name-col {
+  text-align: center;
+  margin-top: 0.3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.info-skill-name-col {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
 }
