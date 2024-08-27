@@ -1,0 +1,40 @@
+{
+  "champions": {
+    "kenshin": {
+      "name": "Kenshin",
+      "avatar": "Kenshin/kenshin-avatar.jpeg",
+      "skills": {
+        "skill1": {
+          "img": "Kenshin/kenshin-skill1.jpeg",
+          "name": "Lightning thrust",
+          "shortDsc": "DMG | 25 | single target",
+          "longDsc": "Kenshin dashes with his katana, infused with the spark of lihtning, dealing 25 DMG to single target.",
+          "cd": 1,
+          "cost": {
+            "fire": 1,
+            "water": 0,
+            "earth": 0,
+            "wind": 0,
+            "light": 0,
+            "dark": 1
+          }
+        },
+        "skill2": {
+          "img": "Kenshin/kenshin-skill2.jpeg",
+          "name": "Bolt on lightning",
+          "shortDsc": "DMG | 30 | multi target",
+          "longDsc": "Kenshin summons lightning strike, dealing 30 DMG to all enemies.",
+          "cd": 3,
+          "cost": {
+            "fire": 3,
+            "water": 0,
+            "earth": 0,
+            "wind": 0,
+            "light": 0,
+            "dark": 0
+          }
+        }
+      }
+    }
+  }
+}

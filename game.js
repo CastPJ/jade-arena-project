@@ -1,30 +1,58 @@
 const infoBar = document.getElementById("info-bar");
-infoBar.innerHTML = `
+const skillBtns = document.querySelectorAll(".skill");
+skillBtns.forEach((skillBtn) => {
+  skillBtn.addEventListener("click", showInfo);
+});
+
+function showInfo(e) {
+  e.preventDefault();
+  const url = e.target.src;
+  const parts = url.split("/");
+  const part = parts[parts.length - 1].split(".")[0];
+  const focusedChampion = part.split("-")[0];
+  const focusedSkill = part.split("-")[1];
+
+  fetch("/data/champions.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const champion = data.champions.kenshin;
+      let skill = focusedSkill;
+      let championName = champion.name;
+      const skillImg = champion.skills[skill].img;
+      let skillName = champion.skills[skill].name;
+      let skillShortDsc = champion.skills[skill].shortDsc;
+      let skillLongDsc = champion.skills[skill].longDsc;
+      let skillCost = champion.skills[skill].cost.fire;
+      let skillCd = champion.skills[skill].cd;
+      infoBar.innerHTML = `
          <div class="row">
             <div class="col-3">
               <div class="row info-img">
                 <img
                   class="p-0"
-                  src="/images/Champions/Kenshin/Kenshin-skill-1.jpeg"
+                  src="/images/Champions/${skillImg}"
                   alt=""
                 />
               </div>
               <div class="row info-add">
-                <div class="col info-energy">1x[--] 1x[--]</div>
-                <div class="col info-cooldown">Cd: 1</div>
+                <div class="col info-energy">${skillCost}</div>
+                <div class="col info-cooldown">Cd: ${skillCd}</div>
               </div>
             </div>
             <div class="col-9 skill-description">
-              <div class="row skill-name">Lightning thrust</div>
+              <div class="row skill-name">${skillName}</div>
               <div class="row skill-short-description">
-                DMG | 25 | single target
+                ${skillShortDsc}
               </div>
               <div class="row skill-long-description">
-                Kenshin dashes with his katana, infused with the spark of
-                lihtning, dealing 25 DMG to single target.
+                ${skillLongDsc}
               </div>
             </div>
           </div>`;
+    })
+    .catch((error) => console.error("Error fetching data:", error));
+}
+
 // infoBar.innerHTML = `<div class="row info-image-row">
 //             <div class="col image-col">
 //               <img
