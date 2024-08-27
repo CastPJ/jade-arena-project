@@ -9,15 +9,15 @@ function showInfo(e) {
   const url = e.target.src;
   const parts = url.split("/");
   const part = parts[parts.length - 1].split(".")[0];
-  const focusedChampion = part.split("-")[0];
+  const focusedChampion = part.split("-")[0].toLowerCase();
   const focusedSkill = part.split("-")[1];
 
   fetch("/data/champions.json")
     .then((response) => response.json())
     .then((data) => {
-      const champion = data.champions.kenshin;
+      const champion = data.champions[focusedChampion];
       let skill = focusedSkill;
-      let championName = champion.name;
+      // let championName
       const skillImg = champion.skills[skill].img;
       let skillName = champion.skills[skill].name;
       let skillShortDsc = champion.skills[skill].shortDsc;

@@ -7,7 +7,7 @@
         "skill1": {
           "img": "Kenshin/kenshin-skill1.jpeg",
           "name": "Lightning thrust",
-          "shortDsc": "DMG | 25 | single target",
+          "shortDsc": "DMG | single target | 25",
           "longDsc": "Kenshin dashes with his katana, infused with the spark of lihtning, dealing 25 DMG to single target.",
           "cd": 1,
           "cost": {
@@ -22,8 +22,170 @@
         "skill2": {
           "img": "Kenshin/kenshin-skill2.jpeg",
           "name": "Bolt on lightning",
-          "shortDsc": "DMG | 30 | multi target",
+          "shortDsc": "DMG | AoE | 30",
           "longDsc": "Kenshin summons lightning strike, dealing 30 DMG to all enemies.",
+          "cd": 3,
+          "cost": {
+            "fire": 3,
+            "water": 0,
+            "earth": 0,
+            "wind": 0,
+            "light": 0,
+            "dark": 0
+          }
+        },
+        "skill3": {
+          "img": "Kenshin/kenshin-skill3.jpeg",
+          "name": "Charge up",
+          "shortDsc": "Utility | Self | Clears CD | All DMG + 5",
+          "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
+          "cd": 3,
+          "cost": {
+            "fire": 3,
+            "water": 0,
+            "earth": 0,
+            "wind": 0,
+            "light": 0,
+            "dark": 0
+          }
+        },
+        "skill4": {
+          "img": "Kenshin/kenshin-skill4.jpeg",
+          "name": "Bolt on lightning",
+          "shortDsc": "DMG | 30 | multi target",
+          "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
+          "cd": 3,
+          "cost": {
+            "fire": 3,
+            "water": 0,
+            "earth": 0,
+            "wind": 0,
+            "light": 0,
+            "dark": 0
+          }
+        }
+      }
+    },
+    "hathun": {
+      "name": "Hathun",
+      "avatar": "Hathun/hathun-avatar.jpeg",
+      "skills": {
+        "skill1": {
+          "img": "Hathun/hathun-skill1.jpeg",
+          "name": "Lightning thrust",
+          "shortDsc": "DMG | single target | 25",
+          "longDsc": "Hathun dashes with his katana, infused with the spark of lihtning, dealing 25 DMG to single target.",
+          "cd": 1,
+          "cost": {
+            "fire": 1,
+            "water": 0,
+            "earth": 0,
+            "wind": 0,
+            "light": 0,
+            "dark": 1
+          }
+        },
+        "skill2": {
+          "img": "Hathun/Hathun-skill2.jpeg",
+          "name": "Bolt on lightning",
+          "shortDsc": "DMG | AoE | 30",
+          "longDsc": "Hathun summons lightning strike, dealing 30 DMG to all enemies.",
+          "cd": 3,
+          "cost": {
+            "fire": 3,
+            "water": 0,
+            "earth": 0,
+            "wind": 0,
+            "light": 0,
+            "dark": 0
+          }
+        },
+        "skill3": {
+          "img": "Hathun/Hathun-skill3.jpeg",
+          "name": "Charge up",
+          "shortDsc": "Utility | Self | Clears CD | All DMG + 5",
+          "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
+          "cd": 3,
+          "cost": {
+            "fire": 3,
+            "water": 0,
+            "earth": 0,
+            "wind": 0,
+            "light": 0,
+            "dark": 0
+          }
+        },
+        "skill4": {
+          "img": "Hathun/Hathun-skill4.jpeg",
+          "name": "Bolt on lightning",
+          "shortDsc": "DMG | 30 | multi target",
+          "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
+          "cd": 3,
+          "cost": {
+            "fire": 3,
+            "water": 0,
+            "earth": 0,
+            "wind": 0,
+            "light": 0,
+            "dark": 0
+          }
+        }
+      }
+    },
+    "silvia": {
+      "name": "Silvia",
+      "avatar": "Silvia/Silvia-avatar.jpeg",
+      "skills": {
+        "skill1": {
+          "img": "Silvia/Silvia-skill1.jpeg",
+          "name": "Lightning thrust",
+          "shortDsc": "DMG | single target | 25",
+          "longDsc": "Silvia dashes with his katana, infused with the spark of lihtning, dealing 25 DMG to single target.",
+          "cd": 1,
+          "cost": {
+            "fire": 1,
+            "water": 0,
+            "earth": 0,
+            "wind": 0,
+            "light": 0,
+            "dark": 1
+          }
+        },
+        "skill2": {
+          "img": "Silvia/Silvia-skill2.jpeg",
+          "name": "Bolt on lightning",
+          "shortDsc": "DMG | AoE | 30",
+          "longDsc": "Silvia summons lightning strike, dealing 30 DMG to all enemies.",
+          "cd": 3,
+          "cost": {
+            "fire": 3,
+            "water": 0,
+            "earth": 0,
+            "wind": 0,
+            "light": 0,
+            "dark": 0
+          }
+        },
+        "skill3": {
+          "img": "Silvia/Silvia-skill3.jpeg",
+          "name": "Charge up",
+          "shortDsc": "Utility | Self | Clears CD | All DMG + 5",
+          "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
+          "cd": 3,
+          "cost": {
+            "fire": 3,
+            "water": 0,
+            "earth": 0,
+            "wind": 0,
+            "light": 0,
+            "dark": 0
+          }
+        },
+        "skill4": {
+          "img": "Silvia/Silvia-skill4.jpeg",
+          "name": "Bolt on lightning",
+          "shortDsc": "DMG | 30 | multi target",
+          "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
           "cd": 3,
           "cost": {
             "fire": 3,
