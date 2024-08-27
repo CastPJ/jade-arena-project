@@ -1,10 +1,14 @@
 const infoBar = document.getElementById("info-bar");
 const skillBtns = document.querySelectorAll(".skill");
+const avatarBtns = document.querySelectorAll(".avatar");
 skillBtns.forEach((skillBtn) => {
-  skillBtn.addEventListener("click", showInfo);
+  skillBtn.addEventListener("click", showSkillInfo);
+});
+avatarBtns.forEach((avatarBtn) => {
+  avatarBtn.addEventListener("click", showChampionInfo);
 });
 
-function showInfo(e) {
+function showSkillInfo(e) {
   e.preventDefault();
   const url = e.target.src;
   const parts = url.split("/");
@@ -53,59 +57,70 @@ function showInfo(e) {
     .catch((error) => console.error("Error fetching data:", error));
 }
 
-// infoBar.innerHTML = `<div class="row info-image-row">
-//             <div class="col image-col">
-//               <img
-//                 class="img-avatar info-img-avatar"
-//                 src="/images/Champions/Silvia/Silvia-avatar.jpeg"
-//                 alt=""
-//               />
-//             </div>
-//             <div class="col image-col">
-//               <img
-//                 class="img-skill info-img-avatar"
-//                 src="/images/Champions/Silvia/Silvia-skill-1.jpeg"
-//                 alt=""
-//               />
-//             </div>
-//             <div class="col image-col">
-//               <img
-//                 class="img-skill"
-//                 src="/images/Champions/Silvia/Silvia-skill-2.jpeg"
-//                 alt=""
-//               />
-//             </div>
-//             <div class="col image-col">
-//               <img
-//                 class="img-skill"
-//                 src="/images/Champions/Silvia/Silvia-skill-3.jpeg"
-//                 alt=""
-//               />
-//             </div>
-//             <div class="col image-col">
-//               <img
-//                 class="img-skill"
-//                 src="/images/Champions/Silvia/Silvia-skill-4.jpeg"
-//                 alt=""
-//               />
-//             </div>
-//           </div>
-//           <div class="row info-name-row">
-//             <div class="col info-name-col">Silvia</div>
-//             <div class="col info-skill-name-col">
-//               <h6 class="m-0">Thrust</h6>
-//               DMG | 25 | single target
-//             </div>
-//             <div class="col info-skill-name-col">
-//               <h6 class="m-0">Thrust</h6>
-//               DMG | 25 | single target
-//             </div>
-//             <div class="col info-skill-name-col">
-//               <h6 class="m-0">Thrust</h6>
-//               DMG | 25 | single target
-//             </div>
-//             <div class="col info-skill-name-col">
-//               <h6 class="m-0">Thrust</h6>
-//               DMG | 25 | single target
-//             </div>
-//           </div>`;
+function showChampionInfo(e) {
+  e.preventDefault();
+  const url = e.target.src;
+  const parts = url.split("/");
+  const part = parts[parts.length - 1].split(".")[0];
+  const focusedChampion = part.split("-")[0];
+  infoBar.innerHTML = `<div class="row info-image-row">
+            <div class="col image-col">
+              <img
+                class="img-avatar info-img-avatar"
+                src="/images/Champions/${focusedChampion}/${focusedChampion}-avatar.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="col image-col">
+              <img
+                class="img-skill skill"
+                src="/images/Champions/${focusedChampion}/${focusedChampion}-skill1.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="col image-col">
+              <img
+                class="img-skill skill"
+                src="/images/Champions/${focusedChampion}/${focusedChampion}-skill2.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="col image-col">
+              <img
+                class="img-skill skill"
+                src="/images/Champions/${focusedChampion}/${focusedChampion}-skill3.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="col image-col">
+              <img
+                class="img-skill skill"
+                src="/images/Champions/${focusedChampion}/${focusedChampion}-skill4.jpeg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="row info-name-row">
+            <div class="col info-name-col">${focusedChampion}</div>
+            <div class="col info-skill-name-col">
+              <h6 class="m-0">Thrust</h6>
+              DMG | 25 | single target
+            </div>
+            <div class="col info-skill-name-col">
+              <h6 class="m-0">Thrust</h6>
+              DMG | 25 | single target
+            </div>
+            <div class="col info-skill-name-col">
+              <h6 class="m-0">Thrust</h6>
+              DMG | 25 | single target
+            </div>
+            <div class="col info-skill-name-col">
+              <h6 class="m-0">Thrust</h6>
+              DMG | 25 | single target
+            </div>
+          </div>`;
+  const newSkillBtns = document.querySelectorAll(".skill");
+  newSkillBtns.forEach((skillBtn) => {
+    skillBtn.addEventListener("click", showSkillInfo);
+  });
+}
