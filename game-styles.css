@@ -157,6 +157,18 @@ body {
   background-color: rgb(216, 216, 216);
 }
 
+.status-bar {
+  margin-left: 12px;
+}
+
+.status-col {
+  height: 3rem;
+}
+
+.status-img {
+  width: 100%;
+}
+
 /* Enemy Field */
 
 .enemy-field-lower {
