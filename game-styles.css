@@ -169,6 +169,10 @@ body {
   width: 100%;
 }
 
+.hp {
+  text-align: center;
+}
+
 /* Enemy Field */
 
 .enemy-field-lower {
