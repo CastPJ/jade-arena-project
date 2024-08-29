@@ -182,9 +182,27 @@ body {
 
 .energy-dice {
   border: 1px solid black;
-  background-color: rgb(221, 39, 39);
   height: 1rem;
   width: 1rem;
+}
+
+.fire {
+  background-color: rgb(212, 6, 6);
+}
+.water {
+  background-color: rgb(58, 159, 226);
+}
+.earth {
+  background-color: rgb(28, 180, 97);
+}
+.wind {
+  background-color: rgb(231, 229, 229);
+}
+.light {
+  background-color: rgb(251, 255, 0);
+}
+.dark {
+  background-color: rgb(63, 3, 70);
 }
 
 /* Enemy Field */

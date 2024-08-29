@@ -1,12 +1,69 @@
 const infoBar = document.getElementById("info-bar");
 const skillBtns = document.querySelectorAll(".skill");
 const avatarBtns = document.querySelectorAll(".avatar");
+
+let champion1 = "kenshin";
+let champion2 = "hathun";
+let champion3 = "silvia";
+
 skillBtns.forEach((skillBtn) => {
   skillBtn.addEventListener("click", showSkillInfo);
 });
 avatarBtns.forEach((avatarBtn) => {
   avatarBtn.addEventListener("click", showChampionInfo);
 });
+document.addEventListener("DOMContentLoaded", loadSkills);
+
+function loadSkills(e) {
+  e.preventDefault();
+  fetch("/data/champions.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const champions = [champion1, champion2, champion3];
+
+      const costs = champions.flatMap((champion) =>
+        Object.values(data.champions[champion].skills).map(
+          (skill) => skill?.cost
+        )
+      );
+
+      let skillIndex = 1;
+
+      costs.forEach((cost) => {
+        const energyDiceContainer = document.getElementById(
+          `skill${skillIndex}`
+        );
+
+        if (energyDiceContainer) {
+          const energyDiceArray = cost.split("-");
+
+          const energyTypes = [
+            "fire",
+            "water",
+            "earth",
+            "wind",
+            "light",
+            "dark",
+          ];
+
+          energyDiceArray.forEach((dice, index) => {
+            const numberOfDice = Number(dice);
+            if (numberOfDice > 0) {
+              for (let i = 0; i < numberOfDice; i++) {
+                const energyDice = document.createElement("div");
+                energyDice.classList.add("energy-dice");
+                energyDice.classList.add(energyTypes[index]);
+                energyDiceContainer.appendChild(energyDice);
+              }
+            }
+          });
+        }
+
+        skillIndex += 1;
+      });
+    })
+    .catch((error) => console.error("Error fetching data:", error));
+}
 
 function showSkillInfo(e) {
   e.preventDefault();
@@ -21,12 +78,11 @@ function showSkillInfo(e) {
     .then((data) => {
       const champion = data.champions[focusedChampion];
       let skill = focusedSkill;
-      // let championName
       const skillImg = champion.skills[skill].img;
       let skillName = champion.skills[skill].name;
       let skillShortDsc = champion.skills[skill].shortDsc;
       let skillLongDsc = champion.skills[skill].longDsc;
-      let skillCost = champion.skills[skill].cost.fire;
+      let skillCost = "placeholder";
       let skillCd = champion.skills[skill].cd;
       infoBar.innerHTML = `
          <div class="row">

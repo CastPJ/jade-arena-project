@@ -10,14 +10,7 @@
           "shortDsc": "DMG | single target | 25",
           "longDsc": "Kenshin dashes with his katana, infused with the spark of lihtning, dealing 25 DMG to single target.",
           "cd": 1,
-          "cost": {
-            "fire": 1,
-            "water": 0,
-            "earth": 0,
-            "wind": 0,
-            "light": 0,
-            "dark": 1
-          }
+          "cost": "1-0-0-0-0-1"
         },
         "skill2": {
           "img": "Kenshin/kenshin-skill2.jpeg",
@@ -25,14 +18,7 @@
           "shortDsc": "DMG | AoE | 30",
           "longDsc": "Kenshin summons lightning strike, dealing 30 DMG to all enemies.",
           "cd": 3,
-          "cost": {
-            "fire": 3,
-            "water": 0,
-            "earth": 0,
-            "wind": 0,
-            "light": 0,
-            "dark": 0
-          }
+          "cost": "1-0-0-1-0-1"
         },
         "skill3": {
           "img": "Kenshin/kenshin-skill3.jpeg",
@@ -40,14 +26,7 @@
           "shortDsc": "Utility | Self | Clears CD | All DMG + 5",
           "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
           "cd": 3,
-          "cost": {
-            "fire": 3,
-            "water": 0,
-            "earth": 0,
-            "wind": 0,
-            "light": 0,
-            "dark": 0
-          }
+          "cost": "1-0-2-0-0-1"
         },
         "skill4": {
           "img": "Kenshin/kenshin-skill4.jpeg",
@@ -55,14 +34,7 @@
           "shortDsc": "DMG | 30 | multi target",
           "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
           "cd": 3,
-          "cost": {
-            "fire": 3,
-            "water": 0,
-            "earth": 0,
-            "wind": 0,
-            "light": 0,
-            "dark": 0
-          }
+          "cost": "1-2-0-0-0-1"
         }
       }
     },
@@ -76,14 +48,7 @@
           "shortDsc": "DMG | single target | 25",
           "longDsc": "Hathun dashes with his katana, infused with the spark of lihtning, dealing 25 DMG to single target.",
           "cd": 1,
-          "cost": {
-            "fire": 1,
-            "water": 0,
-            "earth": 0,
-            "wind": 0,
-            "light": 0,
-            "dark": 1
-          }
+          "cost": "1-0-0-0-0-1"
         },
         "skill2": {
           "img": "Hathun/Hathun-skill2.jpeg",
@@ -91,14 +56,7 @@
           "shortDsc": "DMG | AoE | 30",
           "longDsc": "Hathun summons lightning strike, dealing 30 DMG to all enemies.",
           "cd": 3,
-          "cost": {
-            "fire": 3,
-            "water": 0,
-            "earth": 0,
-            "wind": 0,
-            "light": 0,
-            "dark": 0
-          }
+          "cost": "1-0-0-0-0-1"
         },
         "skill3": {
           "img": "Hathun/Hathun-skill3.jpeg",
@@ -106,14 +64,7 @@
           "shortDsc": "Utility | Self | Clears CD | All DMG + 5",
           "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
           "cd": 3,
-          "cost": {
-            "fire": 3,
-            "water": 0,
-            "earth": 0,
-            "wind": 0,
-            "light": 0,
-            "dark": 0
-          }
+          "cost": "1-0-0-0-0-1"
         },
         "skill4": {
           "img": "Hathun/Hathun-skill4.jpeg",
@@ -121,14 +72,7 @@
           "shortDsc": "DMG | 30 | multi target",
           "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
           "cd": 3,
-          "cost": {
-            "fire": 3,
-            "water": 0,
-            "earth": 0,
-            "wind": 0,
-            "light": 0,
-            "dark": 0
-          }
+          "cost": "1-0-0-0-0-1"
         }
       }
     },
@@ -142,14 +86,7 @@
           "shortDsc": "DMG | single target | 25",
           "longDsc": "Silvia dashes with his katana, infused with the spark of lihtning, dealing 25 DMG to single target.",
           "cd": 1,
-          "cost": {
-            "fire": 1,
-            "water": 0,
-            "earth": 0,
-            "wind": 0,
-            "light": 0,
-            "dark": 1
-          }
+          "cost": "1-0-0-0-0-1"
         },
         "skill2": {
           "img": "Silvia/Silvia-skill2.jpeg",
@@ -157,14 +94,7 @@
           "shortDsc": "DMG | AoE | 30",
           "longDsc": "Silvia summons lightning strike, dealing 30 DMG to all enemies.",
           "cd": 3,
-          "cost": {
-            "fire": 3,
-            "water": 0,
-            "earth": 0,
-            "wind": 0,
-            "light": 0,
-            "dark": 0
-          }
+          "cost": "1-0-0-0-0-1"
         },
         "skill3": {
           "img": "Silvia/Silvia-skill3.jpeg",
@@ -172,14 +102,7 @@
           "shortDsc": "Utility | Self | Clears CD | All DMG + 5",
           "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
           "cd": 3,
-          "cost": {
-            "fire": 3,
-            "water": 0,
-            "earth": 0,
-            "wind": 0,
-            "light": 0,
-            "dark": 0
-          }
+          "cost": "1-0-0-0-0-1"
         },
         "skill4": {
           "img": "Silvia/Silvia-skill4.jpeg",
@@ -187,14 +110,7 @@
           "shortDsc": "DMG | 30 | multi target",
           "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
           "cd": 3,
-          "cost": {
-            "fire": 3,
-            "water": 0,
-            "earth": 0,
-            "wind": 0,
-            "light": 0,
-            "dark": 0
-          }
+          "cost": "1-0-0-0-3-1"
         }
       }
     }
