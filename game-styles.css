@@ -178,6 +178,7 @@ body {
   gap: 4px;
   justify-content: center;
   margin-top: 0.3rem;
+  padding-left: 0;
 }
 
 .energy-dice {
@@ -270,6 +271,12 @@ body {
   height: 12rem;
 }
 
+.info-energy {
+  display: flex;
+  gap: 4px;
+  padding-left: 0.5rem;
+}
+
 .info-add {
   width: 12rem;
 }
@@ -319,4 +326,11 @@ body {
 .info-skill-name-col {
   margin-top: 0.3rem;
   font-size: 0.85rem;
+}
+
+.back-to-champion-btn {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.2rem;
+  padding-right: 0.3rem;
 }
