@@ -65,68 +65,6 @@ function loadSkills(e) {
     .catch((error) => console.error("Error fetching data:", error));
 }
 
-function showChampionInfo(e, championName = null) {
-  e?.preventDefault();
-
-  if (!championName) {
-    const url = e.target.src;
-    const parts = url.split("/");
-    championName = parts[parts.length - 1].split(".")[0].split("-")[0];
-  }
-
-  fetch("/data/champions.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const champion = data.champions[championName.toLowerCase()];
-      const championSkills = Object.values(champion.skills);
-
-      infoBar.innerHTML = `
-        <div class="row info-image-row">
-          <div class="col image-col">
-            <img
-              class="img-avatar info-img-avatar"
-              src="/images/Champions/${championName}/${championName}-avatar.jpeg"
-              alt=""
-            />
-          </div>
-          ${championSkills
-            .map(
-              (skill, index) => `
-          <div class="col image-col">
-            <img
-              class="img-skill skill"
-              src="/images/Champions/${championName}/${championName}-skill${
-                index + 1
-              }.jpeg"
-              alt=""
-            />
-          </div>
-          `
-            )
-            .join("")}
-        </div>
-        <div class="row info-name-row">
-          <div class="col info-name-col">${champion.name}</div>
-          ${championSkills
-            .map(
-              (skill) => `
-          <div class="col info-skill-name-col">
-            <h6 class="m-0">${skill.name}</h6>
-            ${skill.shortDsc}
-          </div>
-          `
-            )
-            .join("")}
-        </div>`;
-
-      const newSkillBtns = document.querySelectorAll(".skill");
-      newSkillBtns.forEach((skillBtn) => {
-        skillBtn.addEventListener("click", showSkillInfo);
-      });
-    })
-    .catch((error) => console.error("Error fetching data:", error));
-}
-
 function showSkillInfo(e) {
   e.preventDefault();
   const url = e.target.src;
@@ -183,7 +121,7 @@ function showSkillInfo(e) {
                 ${skillLongDsc}
               </div>
               <button class="row btn btn-default back-to-champion-btn">
-                Back to champion
+                Go to champion
               </button>
             </div>
           </div>`;
@@ -194,4 +132,77 @@ function showSkillInfo(e) {
       );
     })
     .catch((error) => console.error("Error fetching data:", error));
+}
+
+function showChampionInfo(e, championName = null) {
+  e?.preventDefault();
+
+  if (!championName) {
+    const url = e.target.src;
+    const parts = url.split("/");
+    const part = parts[parts.length - 1].split(".")[0];
+    championName = part.split("-")[0].toLowerCase();
+  }
+
+  infoBar.innerHTML = `<div class="row info-image-row">
+            <div class="col image-col">
+              <img
+                class="img-avatar info-img-avatar"
+                src="/images/Champions/${championName}/${championName}-avatar.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="col image-col">
+              <img
+                class="img-skill skill"
+                src="/images/Champions/${championName}/${championName}-skill1.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="col image-col">
+              <img
+                class="img-skill skill"
+                src="/images/Champions/${championName}/${championName}-skill2.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="col image-col">
+              <img
+                class="img-skill skill"
+                src="/images/Champions/${championName}/${championName}-skill3.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="col image-col">
+              <img
+                class="img-skill skill"
+                src="/images/Champions/${championName}/${championName}-skill4.jpeg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="row info-name-row">
+            <div class="col info-name-col">${championName}</div>
+            <div class="col info-skill-name-col">
+              <h6 class="m-0">Thrust</h6>
+              DMG | 25 | single target
+            </div>
+            <div class="col info-skill-name-col">
+              <h6 class="m-0">Thrust</h6>
+              DMG | 25 | single target
+            </div>
+            <div class="col info-skill-name-col">
+              <h6 class="m-0">Thrust</h6>
+              DMG | 25 | single target
+            </div>
+            <div class="col info-skill-name-col">
+              <h6 class="m-0">Thrust</h6>
+              DMG | 25 | single target
+            </div>
+          </div>`;
+
+  const newSkillBtns = document.querySelectorAll(".skill");
+  newSkillBtns.forEach((skillBtn) => {
+    skillBtn.addEventListener("click", showSkillInfo);
+  });
 }

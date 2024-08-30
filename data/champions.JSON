@@ -46,7 +46,7 @@
           "img": "Hathun/hathun-skill1.jpeg",
           "name": "Lightning thrust",
           "shortDsc": "DMG | single target | 25",
-          "longDsc": "Hathun dashes with his katana, infused with the spark of lihtning, dealing 25 DMG to single target.",
+          "longDsc": "Kenshin dashes with his katana, infused with the spark of lihtning, dealing 25 DMG to single target.",
           "cd": 1,
           "cost": "1-0-0-0-0-1"
         },
@@ -54,7 +54,7 @@
           "img": "Hathun/Hathun-skill2.jpeg",
           "name": "Bolt on lightning",
           "shortDsc": "DMG | AoE | 30",
-          "longDsc": "Hathun summons lightning strike, dealing 30 DMG to all enemies.",
+          "longDsc": "Kenshin summons lightning strike, dealing 30 DMG to all enemies.",
           "cd": 3,
           "cost": "1-1-0-1-0-0"
         },
@@ -84,7 +84,7 @@
           "img": "Silvia/Silvia-skill1.jpeg",
           "name": "Lightning thrust",
           "shortDsc": "DMG | single target | 25",
-          "longDsc": "Silvia dashes with his katana, infused with the spark of lihtning, dealing 25 DMG to single target.",
+          "longDsc": "Kenshin dashes with his katana, infused with the spark of lihtning, dealing 25 DMG to single target.",
           "cd": 1,
           "cost": "1-0-0-0-0-1"
         },
@@ -92,7 +92,7 @@
           "img": "Silvia/Silvia-skill2.jpeg",
           "name": "Bolt on lightning",
           "shortDsc": "DMG | AoE | 30",
-          "longDsc": "Silvia summons lightning strike, dealing 30 DMG to all enemies.",
+          "longDsc": "Kenshin summons lightning strike, dealing 30 DMG to all enemies.",
           "cd": 3,
           "cost": "0-0-1-0-0-1"
         },
