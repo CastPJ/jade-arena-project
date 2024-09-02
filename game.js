@@ -206,3 +206,60 @@ function showChampionInfo(e, championName = null) {
     skillBtn.addEventListener("click", showSkillInfo);
   });
 }
+
+class Skill {
+  constructor(name, damage, cd, cost) {
+    this.name = name;
+    this.damage = damage;
+    this.cd = cd;
+    this.cost = cost;
+  }
+
+  apply(target) {
+    console.log(`${this.name} is applied to ${target.name}`);
+  }
+}
+
+class KenshinSkill1 extends Skill {
+  constructor(data) {
+    super(data.name, data.damage, data.cd, data.cost);
+  }
+
+  apply(target) {
+    super.apply(target);
+    target.takeDamage(this.damage);
+  }
+}
+
+class Target {
+  constructor(name, health) {
+    this.name = name;
+    this.health = health;
+  }
+
+  takeDamage(damage) {
+    this.health -= damage;
+    console.log(
+      `${this.name} took ${damage} damage. Health is now ${this.health}`
+    );
+  }
+}
+
+function loadSkillAndApply(skillName, target) {
+  fetch("/data/champions.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const skillData = data.champions.kenshin.skills[skillName];
+      const skill = new KenshinSkill1(skillData);
+      skill.apply(target);
+      console.log(`Skill name: ${skill.name}`);
+      console.log(`Skill damage: ${skill.damage}`);
+      console.log(`Skill cd: ${skill.cd}`);
+      console.log(`Skill cost: ${skill.cost}`);
+    })
+    .catch((error) => console.error("Error loading skill data:", error));
+}
+
+// Przykładowe użycie:
+const enemy = new Target("Enemy", 100);
+loadSkillAndApply("skill1", enemy);
