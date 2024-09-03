@@ -18,15 +18,22 @@ avatarBtns.forEach((avatarBtn) => {
 
 document.addEventListener("DOMContentLoaded", loadSkills);
 
-// Loading Skills on Playground
+// Fetch champion data
+function fetchChampionData(championName) {
+  return fetch("/data/champions.json")
+    .then((response) => response.json())
+    .then((data) => data.champions[championName])
+    .catch((error) => console.error("Error fetching champion data:", error));
+}
 
+// Loading Skills on Playground
 function loadSkills(e) {
   e.preventDefault();
-  fetch("/data/champions.json")
-    .then((response) => response.json())
-    .then((data) => {
-      champions.forEach((champion, index) => {
-        Object.values(data.champions[champion].skills).forEach((skill, i) => {
+
+  champions.forEach((champion, index) => {
+    fetchChampionData(champion)
+      .then((championData) => {
+        Object.values(championData.skills).forEach((skill, i) => {
           const energyDiceContainer = document.getElementById(
             `skill${index * 4 + i + 1}`
           );
@@ -34,13 +41,14 @@ function loadSkills(e) {
             createEnergyDice(skill.cost, energyDiceContainer);
           }
         });
-      });
-    })
-    .catch((error) => console.error("Error fetching data:", error));
+      })
+      .catch((error) =>
+        console.error(`Error fetching data for ${champion}:`, error)
+      );
+  });
 }
 
 // Creating Energy Dices underneath skills
-
 function createEnergyDice(cost, container) {
   const energyTypes = ["fire", "water", "earth", "wind", "light", "dark"];
   const energyDiceArray = cost.split("-");
@@ -55,15 +63,13 @@ function createEnergyDice(cost, container) {
 }
 
 // Fetch and load skill & champion info on info bar
-
 function showSkillInfo(e) {
   e.preventDefault();
   const [focusedChampion, focusedSkill] = extractChampionSkill(e.target.src);
 
-  fetch("/data/champions.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const skill = data.champions[focusedChampion].skills[focusedSkill];
+  fetchChampionData(focusedChampion)
+    .then((championData) => {
+      const skill = championData.skills[focusedSkill];
       renderSkillInfo(skill);
       const backToChampionBtn = document.querySelector(".back-to-champion-btn");
       backToChampionBtn.addEventListener("click", () =>
@@ -80,7 +86,9 @@ function showChampionInfo(e, championName = null) {
     championName = extractChampionSkill(e.target.src)[0];
   }
 
-  renderChampionInfo(championName);
+  fetchChampionData(championName).then((championData) => {
+    renderChampionInfo(championName, championData);
+  });
 }
 
 // Render skill & champion info on info bar
@@ -107,7 +115,7 @@ function renderSkillInfo(skill) {
     </div>`;
 }
 
-function renderChampionInfo(championName) {
+function renderChampionInfo(championName, championData) {
   infoBar.innerHTML = `
     <div class="row info-image-row">
       <div class="col image-col">
@@ -124,12 +132,13 @@ function renderChampionInfo(championName) {
         .join("")}
     </div>
     <div class="row info-name-row">
+      <div class="col info-name-col">${capitalizeFLetter(championName)}</div>
       ${[1, 2, 3, 4]
         .map(
           (i) => `
         <div class="col info-skill-name-col">
-          <h6 class="m-0">Thrust</h6>
-          DMG | 25 | single target
+          <h6 class="m-0">${championData.skills[`skill${i}`].name}</h6>
+          ${championData.skills[`skill${i}`].shortDsc}
         </div>
       `
         )
@@ -160,6 +169,10 @@ function extractChampionSkill(url) {
   const parts = url.split("/");
   const [champion, skill] = parts[parts.length - 1].split(".")[0].split("-");
   return [champion.toLowerCase(), skill];
+}
+
+function capitalizeFLetter(string) {
+  return string[0].toUpperCase() + string.slice(1);
 }
 
 // Sample of skills usage [WORKING SECTION !!!]
