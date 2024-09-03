@@ -7,7 +7,7 @@
         "skill1": {
           "img": "Kenshin/kenshin-skill1.jpeg",
           "name": "Lightning Thrust",
-          "shortDsc": "DMG | single target | 15",
+          "shortDsc": "DMG | single target | 15 DMG",
           "longDsc": "Kenshin dashes with his katana, infused with the spark of lightning, dealing 15 DMG to single target.",
           "cd": 1,
           "cost": "1-0-0-0-0-1",
@@ -16,14 +16,14 @@
         "skill2": {
           "img": "Kenshin/kenshin-skill2.jpeg",
           "name": "Bolt of Lightning",
-          "shortDsc": "DMG | AoE | 20",
+          "shortDsc": "DMG | AoE | 20 DMG",
           "longDsc": "Kenshin calls the god of thunder, summoning lightning strike and dealing 20 DMG to all enemies.",
           "cd": 3,
           "cost": "0-2-0-0-0-1"
         },
         "skill3": {
           "img": "Kenshin/kenshin-skill3.jpeg",
-          "name": "Let The Lightning Guide Me",
+          "name": "Charge Up",
           "shortDsc": "Utility | Self | All CD -1 | All DMG + 5",
           "longDsc": "Kenshin is focusing all his energy to deplet combat exhaustion [All CD -1] and to boost his stamina and strength [All DMG +5] till the end of the combat",
           "cd": 0,
@@ -32,7 +32,7 @@
         "skill4": {
           "img": "Kenshin/kenshin-skill4.jpeg",
           "name": "Spark Step",
-          "shortDsc": "Utility | Self | Evade [1] DMG instance [Hidden]",
+          "shortDsc": "Utility | Self | Evade [1][Hidden]",
           "longDsc": "Kenshin is preparing to Evade next [1] DMG instance. He is covering his body and katana in sparks making it Hidden and unable to detect by an enemy",
           "cd": 2,
           "cost": "0-0-0-1-0-1"
@@ -45,33 +45,33 @@
       "skills": {
         "skill1": {
           "img": "Hathun/hathun-skill1.jpeg",
-          "name": "Lightning thrust",
-          "shortDsc": "DMG | single target | 25",
-          "longDsc": "Kenshin dashes with his katana, infused with the spark of lihtning, dealing 25 DMG to single target.",
-          "cd": 1,
+          "name": "Flame Burst",
+          "shortDsc": "DMG | single target | 20 DMG",
+          "longDsc": "Hathun unleashes a concentrated blast of fire, sending a searing ball of flames at the target. The intense heat can melt through even the toughest armor, leaving enemies scorched and vulnerable.",
+          "cd": 0,
           "cost": "1-0-0-0-0-1"
         },
         "skill2": {
           "img": "Hathun/Hathun-skill2.jpeg",
-          "name": "Bolt on lightning",
-          "shortDsc": "DMG | AoE | 30",
-          "longDsc": "Kenshin summons lightning strike, dealing 30 DMG to all enemies.",
+          "name": "Cinder Storm",
+          "shortDsc": "DMG | AoE | DoT[3] | 10 DMG",
+          "longDsc": "Hathun calls forth a storm of burning embers. The cinders persist, scorching the ground and causing sustained fire damage to any foes who dare to remain within the fiery maelstrom.",
           "cd": 3,
           "cost": "1-1-0-1-0-0"
         },
         "skill3": {
           "img": "Hathun/Hathun-skill3.jpeg",
-          "name": "Charge up",
-          "shortDsc": "Utility | Self | Clears CD | All DMG + 5",
-          "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
-          "cd": 3,
+          "name": "Molten Comet",
+          "shortDsc": "DMG | AoE | 40 DMG",
+          "longDsc": "Summoning the fury of a volcanic eruption, Hathun hurls a massive molten rock into the sky. This fiery meteor crash down upon multiple enemies, igniting everything they touch.",
+          "cd": 4,
           "cost": "0-2-0-0-1-1"
         },
         "skill4": {
           "img": "Hathun/Hathun-skill4.jpeg",
-          "name": "Bolt on lightning",
-          "shortDsc": "DMG | 30 | multi target",
-          "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
+          "name": "Scorching Coat",
+          "shortDsc": "Utility | Self | Evade [1] | Reflect 10 DMG",
+          "longDsc": "Hathun envelops himself in a layer of blazing flames that burn with an intense heat. This fiery armor not only shields him from physical harm but also retaliates against any attacker with a burst of scorching fire.",
           "cd": 3,
           "cost": "0-1-0-0-0-1"
         }
@@ -83,34 +83,34 @@
       "skills": {
         "skill1": {
           "img": "Silvia/Silvia-skill1.jpeg",
-          "name": "Lightning thrust",
-          "shortDsc": "DMG | single target | 25",
-          "longDsc": "Kenshin dashes with his katana, infused with the spark of lihtning, dealing 25 DMG to single target.",
+          "name": "Leafy Knife",
+          "shortDsc": "DMG | single target | 20 DMG",
+          "longDsc": "Silvia conjures a blade made of razor-sharp leaves, hurling it at her enemy with pinpoint accuracy. The blade slices through the air with the swiftness of the wind, cutting deep and leaving the target with a lingering sting of nature’s wrath.",
           "cd": 1,
           "cost": "1-0-0-0-0-1"
         },
         "skill2": {
           "img": "Silvia/Silvia-skill2.jpeg",
-          "name": "Bolt on lightning",
-          "shortDsc": "DMG | AoE | 30",
-          "longDsc": "Kenshin summons lightning strike, dealing 30 DMG to all enemies.",
-          "cd": 3,
+          "name": "Soothing Gel",
+          "shortDsc": "Heal | single target | 25 HEAL",
+          "longDsc": "Silvia produces a cool, verdant gel from her hands, applying it to the wounds of an ally. The gel seeps into the skin, rapidly mending injuries and soothing pain with the gentle essence of the forest.",
+          "cd": 0,
           "cost": "0-0-1-0-0-1"
         },
         "skill3": {
           "img": "Silvia/Silvia-skill3.jpeg",
-          "name": "Charge up",
-          "shortDsc": "Utility | Self | Clears CD | All DMG + 5",
-          "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
-          "cd": 3,
+          "name": "Regrowth",
+          "shortDsc": "Heal | AoE | 20 HEAL",
+          "longDsc": "Calling upon the full power of nature’s rejuvenation, Silvia releases a wave of green energy that washes over her entire party. The energy encourages rapid cellular regeneration, healing wounds, restoring vitality, and even reviving the near-fallen.",
+          "cd": 1,
           "cost": "0-0-2-0-0-1"
         },
         "skill4": {
           "img": "Silvia/Silvia-skill4.jpeg",
-          "name": "Bolt on lightning",
-          "shortDsc": "DMG | 30 | multi target",
-          "longDsc": "Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version. Placeholder text, will be extended in later version.",
-          "cd": 3,
+          "name": "Verdant Shield",
+          "shortDsc": "Utility | Self | Evade [All][Hidden]",
+          "longDsc": "Silvia summons a protective barrier of interwoven vines and leaves, forming a living shield around herself or an ally. This barrier not only blocks incoming attacks but also pulses with life, gradually restoring health while it stands.",
+          "cd": 2,
           "cost": "0-0-0-0-0-2"
         }
       }
