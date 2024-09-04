@@ -206,6 +206,10 @@ body {
   background-color: rgb(63, 3, 70);
 }
 
+.highlighted-skill {
+  background-color: yellow;
+}
+
 /* Enemy Field */
 
 .enemy-field-lower {

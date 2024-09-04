@@ -11,6 +11,7 @@ const champions = ["kenshin", "hathun", "silvia"];
 
 skillBtns.forEach((skillBtn) => {
   skillBtn.addEventListener("click", showSkillInfo);
+  // skillBtn.addEventListener("click", focusSkill);
 });
 avatarBtns.forEach((avatarBtn) => {
   avatarBtn.addEventListener("click", showChampionInfo);
@@ -70,6 +71,10 @@ function showSkillInfo(e) {
   fetchChampionData(focusedChampion)
     .then((championData) => {
       const skill = championData.skills[focusedSkill];
+      const focusedSkillId = document.getElementById(
+        championData.skills[focusedSkill].skillid
+      );
+      focusedSkillBorder(focusedSkillId);
       renderSkillInfo(skill);
       const backToChampionBtn = document.querySelector(".back-to-champion-btn");
       backToChampionBtn.addEventListener("click", () =>
@@ -90,6 +95,26 @@ function showChampionInfo(e, championName = null) {
     renderChampionInfo(championName, championData);
   });
 }
+
+function focusedSkillBorder(focusedSkillId) {
+  const allSkills = document.querySelectorAll(".img-skill");
+  allSkills.forEach((skill) => {
+    skill.classList.remove("highlighted-skill");
+  });
+  focusedSkillId.classList.add("highlighted-skill");
+}
+
+// Globalny nasłuchiwacz kliknięć
+document.addEventListener("click", (e) => {
+  // Sprawdź, czy kliknięty element NIE jest skill-em
+  if (!e.target.classList.contains("img-skill")) {
+    // Usuń podświetlenie ze wszystkich skilli
+    const allSkills = document.querySelectorAll(".img-skill");
+    allSkills.forEach((skill) => {
+      skill.classList.remove("highlighted-skill");
+    });
+  }
+});
 
 // Render skill & champion info on info bar
 
@@ -176,49 +201,65 @@ function capitalizeFLetter(string) {
 }
 
 // Sample of skills usage [WORKING SECTION !!!]
-class Skill {
-  constructor(name, damage, cd, cost) {
-    this.name = name;
-    this.damage = damage;
-    this.cd = cd;
-    this.cost = cost;
-  }
 
-  apply(target) {
-    console.log(`${this.name} is applied to ${target.name}`);
-    target.takeDamage(this.damage);
-  }
-}
+// function focusSkill(e) {
+//   e.preventDefault();
 
-class Target {
-  constructor(name, health) {
-    this.name = name;
-    this.health = health;
-  }
+//   const [focusedChampion, focusedSkill] = extractChampionSkill(e.target.src);
+//   const focusedSkillIndicator = document.getElementById("1-1");
+//   fetchChampionData(focusedChampion)
+//     .then((championData) => {
+//       const skill = championData.skills[focusedSkill].skillid;
+//       focusedSkillIndicator.style.backgroundColor = "rgb(255, 251, 0)";
+//       console.log(skill);
+//       console.log(focusedSkillIndicator);
+//     })
+//     .catch((error) => console.error("Error fetching data:", error));
+// }
 
-  takeDamage(damage) {
-    this.health -= damage;
-    console.log(
-      `${this.name} took ${damage} damage. Health is now ${this.health}`
-    );
-  }
-}
+// class Skill {
+//   constructor(name, damage, cd, cost) {
+//     this.name = name;
+//     this.damage = damage;
+//     this.cd = cd;
+//     this.cost = cost;
+//   }
 
-function loadSkillAndApply(skillName, target) {
-  fetch("/data/champions.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const skillData = data.champions.kenshin.skills[skillName];
-      const skill = new Skill(
-        skillData.name,
-        skillData.damage,
-        skillData.cd,
-        skillData.cost
-      );
-      skill.apply(target);
-    })
-    .catch((error) => console.error("Error loading skill data:", error));
-}
+//   apply(target) {
+//     console.log(`${this.name} is applied to ${target.name}`);
+//     target.takeDamage(this.damage);
+//   }
+// }
 
-const enemy = new Target("Enemy", 100);
-loadSkillAndApply("skill1", enemy);
+// class Target {
+//   constructor(name, health) {
+//     this.name = name;
+//     this.health = health;
+//   }
+
+//   takeDamage(damage) {
+//     this.health -= damage;
+//     console.log(
+//       `${this.name} took ${damage} damage. Health is now ${this.health}`
+//     );
+//   }
+// }
+
+// function loadSkillAndApply(skillName, target) {
+//   fetch("/data/champions.json")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const skillData = data.champions.kenshin.skills[skillName];
+//       const skill = new Skill(
+//         skillData.name,
+//         skillData.damage,
+//         skillData.cd,
+//         skillData.cost
+//       );
+//       skill.apply(target);
+//     })
+//     .catch((error) => console.error("Error loading skill data:", error));
+// }
+
+// const enemy = new Target("Enemy", 100);
+// loadSkillAndApply("skill1", enemy);

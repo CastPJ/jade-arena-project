@@ -5,6 +5,7 @@
       "avatar": "Kenshin/kenshin-avatar.jpeg",
       "skills": {
         "skill1": {
+          "skillid": "c1-s1",
           "img": "Kenshin/kenshin-skill1.jpeg",
           "name": "Lightning Thrust",
           "shortDsc": "DMG | single target | 15 DMG",
@@ -14,6 +15,7 @@
           "damage": 15
         },
         "skill2": {
+          "skillid": "c1-s2",
           "img": "Kenshin/kenshin-skill2.jpeg",
           "name": "Bolt of Lightning",
           "shortDsc": "DMG | AoE | 20 DMG",
@@ -22,6 +24,7 @@
           "cost": "0-2-0-0-0-1"
         },
         "skill3": {
+          "skillid": "c1-s3",
           "img": "Kenshin/kenshin-skill3.jpeg",
           "name": "Charge Up",
           "shortDsc": "Utility | Self | All CD -1 | All DMG + 5",
@@ -30,6 +33,7 @@
           "cost": "0-0-0-2-0-0"
         },
         "skill4": {
+          "skillid": "c1-s4",
           "img": "Kenshin/kenshin-skill4.jpeg",
           "name": "Spark Step",
           "shortDsc": "Utility | Self | Evade [1][Hidden]",
@@ -44,6 +48,7 @@
       "avatar": "Hathun/hathun-avatar.jpeg",
       "skills": {
         "skill1": {
+          "skillid": "c2-s1",
           "img": "Hathun/hathun-skill1.jpeg",
           "name": "Flame Burst",
           "shortDsc": "DMG | single target | 20 DMG",
@@ -52,6 +57,7 @@
           "cost": "1-0-0-0-0-1"
         },
         "skill2": {
+          "skillid": "c2-s2",
           "img": "Hathun/Hathun-skill2.jpeg",
           "name": "Cinder Storm",
           "shortDsc": "DMG | AoE | DoT[3] | 10 DMG",
@@ -60,6 +66,7 @@
           "cost": "1-1-0-1-0-0"
         },
         "skill3": {
+          "skillid": "c2-s3",
           "img": "Hathun/Hathun-skill3.jpeg",
           "name": "Molten Comet",
           "shortDsc": "DMG | AoE | 40 DMG",
@@ -68,6 +75,7 @@
           "cost": "0-2-0-0-1-1"
         },
         "skill4": {
+          "skillid": "c2-s4",
           "img": "Hathun/Hathun-skill4.jpeg",
           "name": "Scorching Coat",
           "shortDsc": "Utility | Self | Evade [1] | Reflect 10 DMG",
@@ -82,6 +90,7 @@
       "avatar": "Silvia/Silvia-avatar.jpeg",
       "skills": {
         "skill1": {
+          "skillid": "c3-s1",
           "img": "Silvia/Silvia-skill1.jpeg",
           "name": "Leafy Knife",
           "shortDsc": "DMG | single target | 20 DMG",
@@ -90,6 +99,7 @@
           "cost": "1-0-0-0-0-1"
         },
         "skill2": {
+          "skillid": "c3-s2",
           "img": "Silvia/Silvia-skill2.jpeg",
           "name": "Soothing Gel",
           "shortDsc": "Heal | single target | 25 HEAL",
@@ -98,6 +108,7 @@
           "cost": "0-0-1-0-0-1"
         },
         "skill3": {
+          "skillid": "c3-s3",
           "img": "Silvia/Silvia-skill3.jpeg",
           "name": "Regrowth",
           "shortDsc": "Heal | AoE | 20 HEAL",
@@ -106,6 +117,7 @@
           "cost": "0-0-2-0-0-1"
         },
         "skill4": {
+          "skillid": "c3-s4",
           "img": "Silvia/Silvia-skill4.jpeg",
           "name": "Verdant Shield",
           "shortDsc": "Utility | Self | Evade [All][Hidden]",
