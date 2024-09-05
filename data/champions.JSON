@@ -21,7 +21,8 @@
           "shortDsc": "DMG | AoE | 20 DMG",
           "longDsc": "Kenshin calls the god of thunder, summoning lightning strike and dealing 20 DMG to all enemies.",
           "cd": 3,
-          "cost": "0-2-0-0-0-1"
+          "cost": "0-2-0-0-0-1",
+          "damageAOE": 20
         },
         "skill3": {
           "skillid": "c1-s3",
@@ -54,7 +55,8 @@
           "shortDsc": "DMG | single target | 20 DMG",
           "longDsc": "Hathun unleashes a concentrated blast of fire, sending a searing ball of flames at the target. The intense heat can melt through even the toughest armor, leaving enemies scorched and vulnerable.",
           "cd": 0,
-          "cost": "1-0-0-0-0-1"
+          "cost": "1-0-0-0-0-1",
+          "damage": 20
         },
         "skill2": {
           "skillid": "c2-s2",
@@ -96,7 +98,8 @@
           "shortDsc": "DMG | single target | 20 DMG",
           "longDsc": "Silvia conjures a blade made of razor-sharp leaves, hurling it at her enemy with pinpoint accuracy. The blade slices through the air with the swiftness of the wind, cutting deep and leaving the target with a lingering sting of nature’s wrath.",
           "cd": 1,
-          "cost": "1-0-0-0-0-1"
+          "cost": "1-0-0-0-0-1",
+          "damage": 20
         },
         "skill2": {
           "skillid": "c3-s2",

@@ -2,6 +2,7 @@
 const infoBar = document.getElementById("info-bar");
 const skillBtns = document.querySelectorAll(".skill");
 const avatarBtns = document.querySelectorAll(".avatar");
+let selectedSkill = null;
 
 // Loaded champions
 
@@ -102,6 +103,7 @@ function focusedSkillBorder(focusedSkillId) {
     skill.classList.remove("highlighted-skill");
   });
   focusedSkillId.classList.add("highlighted-skill");
+  selectedSkill = focusedSkillId;
 }
 
 // Globalny nasłuchiwacz kliknięć
@@ -202,64 +204,94 @@ function capitalizeFLetter(string) {
 
 // Sample of skills usage [WORKING SECTION !!!]
 
-// function focusSkill(e) {
-//   e.preventDefault();
+class Skill {
+  constructor(name, damage, damageAOE, cd, cost) {
+    this.name = name;
+    this.damage = damage;
+    this.damageAOE = damageAOE;
+    this.cd = cd;
+    this.cost = cost;
+  }
 
-//   const [focusedChampion, focusedSkill] = extractChampionSkill(e.target.src);
-//   const focusedSkillIndicator = document.getElementById("1-1");
-//   fetchChampionData(focusedChampion)
-//     .then((championData) => {
-//       const skill = championData.skills[focusedSkill].skillid;
-//       focusedSkillIndicator.style.backgroundColor = "rgb(255, 251, 0)";
-//       console.log(skill);
-//       console.log(focusedSkillIndicator);
-//     })
-//     .catch((error) => console.error("Error fetching data:", error));
-// }
+  apply(target) {
+    console.log(`${this.name} is applied to ${target.name}`);
+    target.takeDamage(this.damage);
+  }
+}
 
-// class Skill {
-//   constructor(name, damage, cd, cost) {
-//     this.name = name;
-//     this.damage = damage;
-//     this.cd = cd;
-//     this.cost = cost;
-//   }
+class Target {
+  constructor(name, health) {
+    this.name = name;
+    this.health = health;
+  }
 
-//   apply(target) {
-//     console.log(`${this.name} is applied to ${target.name}`);
-//     target.takeDamage(this.damage);
-//   }
-// }
+  takeDamage(damage) {
+    this.health -= damage;
+    console.log(
+      `${this.name} took ${damage} damage. Health is now ${this.health}`
+    );
+  }
+}
 
-// class Target {
-//   constructor(name, health) {
-//     this.name = name;
-//     this.health = health;
-//   }
+function loadSkillAndApply(championName, skillName, target) {
+  fetch("/data/champions.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const skillData = data.champions[championName].skills[skillName];
+      if (!skillData) {
+        console.error(`Skill not found for ${championName}`);
+        return;
+      }
+      const skill = new Skill(
+        skillData.name,
+        skillData.damage,
+        skillData.damageAOE,
+        skillData.cd,
+        skillData.cost
+      );
+      if (skillData.damage !== undefined) {
+        skill.apply(target);
+      } else {
+        console.log("no skill functionality");
+        return;
+      }
+    })
+    .catch((error) => console.error("Error loading skill data:", error));
+}
 
-//   takeDamage(damage) {
-//     this.health -= damage;
-//     console.log(
-//       `${this.name} took ${damage} damage. Health is now ${this.health}`
-//     );
-//   }
-// }
+const enemies = document.querySelectorAll(".enemy");
 
-// function loadSkillAndApply(skillName, target) {
-//   fetch("/data/champions.json")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       const skillData = data.champions.kenshin.skills[skillName];
-//       const skill = new Skill(
-//         skillData.name,
-//         skillData.damage,
-//         skillData.cd,
-//         skillData.cost
-//       );
-//       skill.apply(target);
-//     })
-//     .catch((error) => console.error("Error loading skill data:", error));
-// }
+enemies.forEach((enemy) => {
+  enemy.addEventListener("click", handleEnemyClick);
+});
 
-// const enemy = new Target("Enemy", 100);
-// loadSkillAndApply("skill1", enemy);
+function handleEnemyClick(e) {
+  const enemyName = e.target.alt;
+
+  if (!selectedSkill) {
+    console.log("Choose a skill first");
+    return;
+  }
+
+  const [focusedChampion, focusedSkill] = extractChampionSkill(
+    selectedSkill.src
+  );
+
+  fetchChampionData(focusedChampion)
+    .then((championData) => {
+      const skillData = championData.skills[focusedSkill];
+      if (skillData) {
+        console.log(
+          `${capitalizeFLetter(focusedChampion)} używał ${
+            skillData.name
+          } na ${enemyName}`
+        );
+        const enemyTarget = new Target(enemyName, 100);
+        loadSkillAndApply(focusedChampion, focusedSkill, enemyTarget);
+        selectedSkill = null;
+      } else {
+        console.log("Skill not found");
+      }
+    })
+    .catch((error) => console.error("Error fetching data:", error));
+}
