@@ -213,9 +213,17 @@ class Skill {
     this.cost = cost;
   }
 
-  apply(target) {
+  applySingleTargetDMG(target) {
     console.log(`${this.name} is applied to ${target.name}`);
     target.takeDamage(this.damage);
+  }
+
+  applyMultiTargetDMG(targets) {
+    console.log(`${this.name} is applied to multiple targets`);
+    targets.forEach((target) => {
+      console.log(`${this.name} is applied to ${target.name}`);
+      target.takeDamage(this.damageAOE);
+    });
   }
 }
 
@@ -233,6 +241,7 @@ class Target {
   }
 }
 
+// Load the skill and apply to target(s)
 function loadSkillAndApply(championName, skillName, target) {
   fetch("/data/champions.json")
     .then((response) => response.json())
@@ -242,6 +251,7 @@ function loadSkillAndApply(championName, skillName, target) {
         console.error(`Skill not found for ${championName}`);
         return;
       }
+
       const skill = new Skill(
         skillData.name,
         skillData.damage,
@@ -249,8 +259,15 @@ function loadSkillAndApply(championName, skillName, target) {
         skillData.cd,
         skillData.cost
       );
+
       if (skillData.damage !== undefined) {
-        skill.apply(target);
+        skill.applySingleTargetDMG(target); // Apply single target damage
+      } else if (skillData.damageAOE !== undefined) {
+        const allEnemies = document.querySelectorAll(".enemy"); // Select all enemies
+        const targets = Array.from(allEnemies).map(
+          (enemy) => new Target(enemy.alt, 100) // Create Target instances for each enemy
+        );
+        skill.applyMultiTargetDMG(targets); // Apply AOE damage to all enemies
       } else {
         console.log("no skill functionality");
         return;
@@ -259,6 +276,7 @@ function loadSkillAndApply(championName, skillName, target) {
     .catch((error) => console.error("Error loading skill data:", error));
 }
 
+// Set up event listeners for all enemies
 const enemies = document.querySelectorAll(".enemy");
 
 enemies.forEach((enemy) => {
@@ -282,7 +300,7 @@ function handleEnemyClick(e) {
       const skillData = championData.skills[focusedSkill];
       if (skillData) {
         console.log(
-          `${capitalizeFLetter(focusedChampion)} używał ${
+          `${capitalizeFLetter(focusedChampion)} użył ${
             skillData.name
           } na ${enemyName}`
         );
@@ -294,4 +312,23 @@ function handleEnemyClick(e) {
       }
     })
     .catch((error) => console.error("Error fetching data:", error));
+}
+
+// Example helper functions
+
+function extractChampionSkill(url) {
+  const parts = url.split("/");
+  const [champion, skill] = parts[parts.length - 1].split(".")[0].split("-");
+  return [champion.toLowerCase(), skill];
+}
+
+function capitalizeFLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function fetchChampionData(championName) {
+  return fetch("/data/champions.json")
+    .then((response) => response.json())
+    .then((data) => data.champions[championName])
+    .catch((error) => console.error("Error fetching champion data:", error));
 }
