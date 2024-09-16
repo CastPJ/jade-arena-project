@@ -12,6 +12,7 @@
           "longDsc": "Kenshin dashes with his katana, infused with the spark of lightning, dealing 15 DMG to single target.",
           "cd": 1,
           "cost": "1-0-0-0-0-1",
+          "targetType": "enemy",
           "damage": 15
         },
         "skill2": {
@@ -22,6 +23,7 @@
           "longDsc": "Kenshin calls the god of thunder, summoning lightning strike and dealing 20 DMG to all enemies.",
           "cd": 3,
           "cost": "0-2-0-0-0-1",
+          "targetType": "enemy",
           "damageAOE": 20
         },
         "skill3": {
@@ -31,7 +33,8 @@
           "shortDsc": "Utility | Self | All CD -1 | All DMG + 5",
           "longDsc": "Kenshin is focusing all his energy to deplet combat exhaustion [All CD -1] and to boost his stamina and strength [All DMG +5] till the end of the combat",
           "cd": 0,
-          "cost": "0-0-0-2-0-0"
+          "cost": "0-0-0-2-0-0",
+          "targetType": "enemy"
         },
         "skill4": {
           "skillid": "c1-s4",
@@ -40,7 +43,8 @@
           "shortDsc": "Utility | Self | Evade [1][Hidden]",
           "longDsc": "Kenshin is preparing to Evade next [1] DMG instance. He is covering his body and katana in sparks making it Hidden and unable to detect by an enemy",
           "cd": 2,
-          "cost": "0-0-0-1-0-1"
+          "cost": "0-0-0-1-0-1",
+          "targetType": "enemy"
         }
       }
     },
@@ -56,6 +60,7 @@
           "longDsc": "Hathun unleashes a concentrated blast of fire, sending a searing ball of flames at the target. The intense heat can melt through even the toughest armor, leaving enemies scorched and vulnerable.",
           "cd": 0,
           "cost": "1-0-0-0-0-1",
+          "targetType": "enemy",
           "damage": 20
         },
         "skill2": {
@@ -65,7 +70,9 @@
           "shortDsc": "DMG | AoE | DoT[3] | 10 DMG",
           "longDsc": "Hathun calls forth a storm of burning embers. The cinders persist, scorching the ground and causing sustained fire damage to any foes who dare to remain within the fiery maelstrom.",
           "cd": 3,
-          "cost": "1-1-0-1-0-0"
+          "cost": "1-1-0-1-0-0",
+          "targetType": "enemy",
+          "damageAOE": 10
         },
         "skill3": {
           "skillid": "c2-s3",
@@ -74,7 +81,9 @@
           "shortDsc": "DMG | AoE | 40 DMG",
           "longDsc": "Summoning the fury of a volcanic eruption, Hathun hurls a massive molten rock into the sky. This fiery meteor crash down upon multiple enemies, igniting everything they touch.",
           "cd": 4,
-          "cost": "0-2-0-0-1-1"
+          "cost": "0-2-0-0-1-1",
+          "targetType": "enemy",
+          "damageAOE": 40
         },
         "skill4": {
           "skillid": "c2-s4",
@@ -83,7 +92,8 @@
           "shortDsc": "Utility | Self | Evade [1] | Reflect 10 DMG",
           "longDsc": "Hathun envelops himself in a layer of blazing flames that burn with an intense heat. This fiery armor not only shields him from physical harm but also retaliates against any attacker with a burst of scorching fire.",
           "cd": 3,
-          "cost": "0-1-0-0-0-1"
+          "cost": "0-1-0-0-0-1",
+          "targetType": "enemy"
         }
       }
     },
@@ -99,6 +109,7 @@
           "longDsc": "Silvia conjures a blade made of razor-sharp leaves, hurling it at her enemy with pinpoint accuracy. The blade slices through the air with the swiftness of the wind, cutting deep and leaving the target with a lingering sting of nature’s wrath.",
           "cd": 1,
           "cost": "1-0-0-0-0-1",
+          "targetType": "enemy",
           "damage": 20
         },
         "skill2": {
@@ -108,7 +119,9 @@
           "shortDsc": "Heal | single target | 25 HEAL",
           "longDsc": "Silvia produces a cool, verdant gel from her hands, applying it to the wounds of an ally. The gel seeps into the skin, rapidly mending injuries and soothing pain with the gentle essence of the forest.",
           "cd": 0,
-          "cost": "0-0-1-0-0-1"
+          "cost": "0-0-1-0-0-1",
+          "targetType": "enemy",
+          "heal": 25
         },
         "skill3": {
           "skillid": "c3-s3",
@@ -117,7 +130,9 @@
           "shortDsc": "Heal | AoE | 20 HEAL",
           "longDsc": "Calling upon the full power of nature’s rejuvenation, Silvia releases a wave of green energy that washes over her entire party. The energy encourages rapid cellular regeneration, healing wounds, restoring vitality, and even reviving the near-fallen.",
           "cd": 1,
-          "cost": "0-0-2-0-0-1"
+          "cost": "0-0-2-0-0-1",
+          "targetType": "enemy",
+          "healAOE": 20
         },
         "skill4": {
           "skillid": "c3-s4",
@@ -126,7 +141,8 @@
           "shortDsc": "Utility | Self | Evade [All][Hidden]",
           "longDsc": "Silvia summons a protective barrier of interwoven vines and leaves, forming a living shield around herself or an ally. This barrier not only blocks incoming attacks but also pulses with life, gradually restoring health while it stands.",
           "cd": 2,
-          "cost": "0-0-0-0-0-2"
+          "cost": "0-0-0-0-0-2",
+          "targetType": "enemy"
         }
       }
     }

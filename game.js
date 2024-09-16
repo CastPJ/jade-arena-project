@@ -213,16 +213,16 @@ class Skill {
     this.cost = cost;
   }
 
-  applySingleTargetDMG(target) {
-    console.log(`${this.name} is applied to ${target.name}`);
-    target.takeDamage(this.damage);
-  }
+  applyDamage(targets) {
+    if (!Array.isArray(targets)) {
+      targets = [targets]; // Convert single target to an array for consistency
+    }
 
-  applyMultiTargetDMG(targets) {
-    console.log(`${this.name} is applied to multiple targets`);
     targets.forEach((target) => {
+      const damage =
+        this.damageAOE !== undefined ? this.damageAOE : this.damage;
       console.log(`${this.name} is applied to ${target.name}`);
-      target.takeDamage(this.damageAOE);
+      target.takeDamage(damage);
     });
   }
 }
@@ -241,7 +241,6 @@ class Target {
   }
 }
 
-// Load the skill and apply to target(s)
 function loadSkillAndApply(championName, skillName, target) {
   fetch("/data/champions.json")
     .then((response) => response.json())
@@ -260,18 +259,14 @@ function loadSkillAndApply(championName, skillName, target) {
         skillData.cost
       );
 
-      if (skillData.damage !== undefined) {
-        skill.applySingleTargetDMG(target); // Apply single target damage
-      } else if (skillData.damageAOE !== undefined) {
-        const allEnemies = document.querySelectorAll(".enemy"); // Select all enemies
-        const targets = Array.from(allEnemies).map(
-          (enemy) => new Target(enemy.alt, 100) // Create Target instances for each enemy
-        );
-        skill.applyMultiTargetDMG(targets); // Apply AOE damage to all enemies
-      } else {
-        console.log("no skill functionality");
-        return;
-      }
+      const targets =
+        skillData.damageAOE !== undefined
+          ? Array.from(document.querySelectorAll(".enemy")).map(
+              (enemy) => new Target(enemy.alt, 100)
+            )
+          : target; // Use either all enemies or single target
+
+      skill.applyDamage(targets); // Apply damage to the relevant target(s)
     })
     .catch((error) => console.error("Error loading skill data:", error));
 }
