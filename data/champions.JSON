@@ -120,7 +120,7 @@
           "longDsc": "Silvia produces a cool, verdant gel from her hands, applying it to the wounds of an ally. The gel seeps into the skin, rapidly mending injuries and soothing pain with the gentle essence of the forest.",
           "cd": 0,
           "cost": "0-0-1-0-0-1",
-          "targetType": "enemy",
+          "targetType": "ally",
           "heal": 25
         },
         "skill3": {

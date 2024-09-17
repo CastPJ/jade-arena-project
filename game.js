@@ -238,6 +238,13 @@ class Target {
     console.log(
       `${this.name} took ${damage} damage. Health is now ${this.health}`
     );
+
+    const hpElements = document.querySelectorAll(".hp"); // Lepiej użyć querySelectorAll
+    hpElements.forEach((element) => {
+      if (element.getAttribute("data-target-name") === this.name) {
+        element.textContent = `${this.health}/100`; // Aktualizacja wyświetlanego zdrowia
+      }
+    });
   }
 }
 
